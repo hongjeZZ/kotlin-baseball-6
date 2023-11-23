@@ -1,5 +1,8 @@
 package baseball
 
+import baseball.view.OutputView
+
 fun main() {
-    TODO("프로그램 구현")
+    val baseBallGame = BaseBallGame(OutputView())
+    baseBallGame.run()
 }
