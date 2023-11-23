@@ -19,14 +19,14 @@ class InputView {
         return getValidInput { restartNumberValidator.validate(it) }.toInt()
     }
 
-    private fun getValidInput(validator: (String) -> Unit): String {
+    private fun getValidInput(validate: (String) -> Unit): String {
         return try {
             val input = Console.readLine().trim()
-            validator(input)
+            validate(input)
             input
         } catch (e: IllegalArgumentException) {
             println(e.message)
-            getValidInput(validator)
+            getValidInput(validate)
         }
     }
 }

@@ -1,12 +1,14 @@
 package baseball.view
 
+import baseball.domain.Result
+
 class OutputView {
     fun printGameStartMessage() {
         println("숫자 야구 게임을 시작합니다.")
     }
 
-    fun printResult(result: Pair<Int, Int>) {
-        val (ballCount, strikeCount) = result
+    fun printResult(result: Result) {
+        val (ballCount, strikeCount) = result.getResult()
 
         val message = when {
             ballCount > 0 && strikeCount > 0 -> "${ballCount}볼 ${strikeCount}스트라이크"

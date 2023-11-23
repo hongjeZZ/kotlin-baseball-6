@@ -1,13 +1,12 @@
 package baseball.domain
 
 class NumberCalculator {
-    fun getBallAndStrike(
+    fun getResult(
         computerNumbers: List<Int>, userNumbers: List<Int>
-    ): Pair<Int, Int> {
-        val totalCount = getTotalCount(computerNumbers, userNumbers)
+    ): Result {
         val strikeCount = getStrikeCount(computerNumbers, userNumbers)
-        val ballCount = totalCount - strikeCount
-        return Pair(ballCount, strikeCount)
+        val ballCount = getTotalCount(computerNumbers, userNumbers) - strikeCount
+        return Result(Pair(ballCount, strikeCount))
     }
 
     private fun getTotalCount(computerNumbers: List<Int>, userNumbers: List<Int>): Int =
