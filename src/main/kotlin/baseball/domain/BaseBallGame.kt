@@ -14,13 +14,15 @@ class BaseBallGame(
 
     fun run() {
         outputView.printGameStartMessage()
-        computerNumbers = numbersGenerator.createNumbers()
 
         do {
-         playRound()
-        } while (result.second != 3)
-        outputView.printGameEndMessage()
-        val restartNumber = inputView.getRestartNumber()
+            computerNumbers = numbersGenerator.createNumbers()
+            do {
+                playRound()
+            } while (result.second != 3)
+            outputView.printGameEndMessage()
+            val restartNumber = inputView.getRestartNumber()
+        } while (restartNumber == 1)
     }
 
     private fun playRound() {
