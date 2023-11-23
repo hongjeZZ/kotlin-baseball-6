@@ -11,5 +11,6 @@ class BaseBallGame(
     fun run() {
         outputView.printGameStartMessage()
         val computerNumbers = numbersGenerator.createNumbers()
+        val userNumbers = inputView.getUserNumbers()
     }
 }
