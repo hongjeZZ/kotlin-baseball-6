@@ -19,6 +19,8 @@ class BaseBallGame(
         do {
          playRound()
         } while (result.second != 3)
+        outputView.printGameEndMessage()
+        val restartNumber = inputView.getRestartNumber()
     }
 
     private fun playRound() {
