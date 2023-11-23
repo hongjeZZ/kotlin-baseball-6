@@ -15,7 +15,10 @@ class BaseBallGame(
     fun run() {
         outputView.printGameStartMessage()
         computerNumbers = numbersGenerator.createNumbers()
-        playRound()
+
+        do {
+         playRound()
+        } while (result.second != 3)
     }
 
     private fun playRound() {
