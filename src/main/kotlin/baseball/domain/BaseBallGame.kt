@@ -9,12 +9,19 @@ class BaseBallGame(
 ) {
     private val numbersGenerator = NumbersGenerator()
     private val numberCalculator = NumberCalculator()
+    private lateinit var computerNumbers: List<Int>
+    private lateinit var result: Pair<Int, Int>
 
     fun run() {
         outputView.printGameStartMessage()
-        val computerNumbers = numbersGenerator.createNumbers()
-        val userNumbers = inputView.getUserNumbers()
+        computerNumbers = numbersGenerator.createNumbers()
+        playRound()
+    }
 
-        val result = numberCalculator.getBallAndStrike(computerNumbers, userNumbers)
+    private fun playRound() {
+        val userNumbers = inputView.getUserNumbers()
+        result = numberCalculator.getBallAndStrike(computerNumbers, userNumbers)
+
+        outputView.printResult(result)
     }
 }

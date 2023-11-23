@@ -7,7 +7,7 @@ class NumberCalculator {
         val totalCount = getTotalCount(computerNumbers, userNumbers)
         val strikeCount = getStrikeCount(computerNumbers, userNumbers)
         val ballCount = totalCount - strikeCount
-        return Pair(strikeCount, ballCount)
+        return Pair(ballCount, strikeCount)
     }
 
     private fun getTotalCount(computerNumbers: List<Int>, userNumbers: List<Int>): Int =
