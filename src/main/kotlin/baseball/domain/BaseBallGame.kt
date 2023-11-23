@@ -1,9 +1,10 @@
-package baseball
+package baseball.domain
 
-import baseball.domain.NumbersGenerator
+import baseball.view.InputView
 import baseball.view.OutputView
 
 class BaseBallGame(
+    private val inputView: InputView,
     private val outputView: OutputView
 ) {
     private val numbersGenerator = NumbersGenerator()
