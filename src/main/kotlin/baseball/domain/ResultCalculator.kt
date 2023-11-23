@@ -1,6 +1,6 @@
 package baseball.domain
 
-class NumberCalculator {
+class ResultCalculator {
     fun getResult(
         computerNumbers: List<Int>, userNumbers: List<Int>
     ): Result {

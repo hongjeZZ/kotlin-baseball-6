@@ -8,7 +8,7 @@ class BaseBallGame(
     private val outputView: OutputView,
 ) {
     private val numbersGenerator = NumbersGenerator()
-    private val numberCalculator = NumberCalculator()
+    private val resultCalculator = ResultCalculator()
     private lateinit var computerNumbers: List<Int>
     private lateinit var result: Result
     private var restartNumber = 1
@@ -34,7 +34,7 @@ class BaseBallGame(
 
     private fun playRound() {
         val userNumbers = inputView.getUserNumbers()
-        result = numberCalculator.getResult(computerNumbers, userNumbers)
+        result = resultCalculator.getResult(computerNumbers, userNumbers)
 
         outputView.printResult(result)
     }
